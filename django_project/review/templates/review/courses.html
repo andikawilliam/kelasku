@@ -1,0 +1,33 @@
+{% extends "review/base.html" %}
+{% block content %}
+
+<h1>Courses</h1>
+<hr>
+
+{% if course_list %}
+
+<div>
+
+    {% for course in course_list %}
+
+    <div>
+
+        <h3><a href="{% url 'course_detail' course.id %}">{{ course.name }}</a> </h3>
+        <h5>by {{ course.lecturer }}</h5>
+        <br>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% else %}
+
+    <p>No courses are available.</p>
+
+{% endif %}
+
+{% endblock content %}
+
+

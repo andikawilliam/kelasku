@@ -1,0 +1,46 @@
+<!-- Page for campus weather not used yet -->
+
+{% extends "review/base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>Weather on Campus </h1>
+<hr>
+		
+<div class="form-row align-items-center">
+	<div class="col-auto">
+	    <label class="sr-only" for="inlineFormInput">City</label>			
+		<input type="text" class="form-control" id="city" placeholder="Universitas Gadjah MadaS">
+	</div>
+	<div class="col-auto">
+		<label class="sr-only" for="inlineFormInputGroup">Latitude</label>
+	    <input type="text" class="form-control" id="latitude" placeholder="Latitude" disabled>
+	</div>
+	<div class="col-auto">
+	    <label class="sr-only" for="inlineFormInputGroup">Longitude</label>
+	    <input type="text" class="form-control" id="longitude" placeholder="Longitude" disabled>
+	</div>
+	<div class="col-auto">
+		<br>	
+	    <button class="btn btn-primary" id="getWeather" onclick="getWeather()">Check Weather</button>
+	</div>
+</div>
+
+<hr>
+<!-- FOR THE WEATHER RESULT -->
+<h4 id='weather'></h4>
+
+<ul class="list-group list-group-flush weatherDetails">
+  <li class="list-group-item" id="summary"></li>			<!-- place for summary of weather -->
+  <li class="list-group-item" id="temperature"></li>		<!-- place for temperature of weather -->
+  <li class="list-group-item" id="humidity"></li>			<!-- place for humidity of weather -->
+</ul>
+<hr>
+<h5 id='forecast'></h5>
+
+<script src="{% static 'review/script.js' %}"></script>	<!-- Adding the javascript file.. put at the end to help loading -->
+
+{% endblock content %}
+
